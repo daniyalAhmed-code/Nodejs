@@ -2,9 +2,10 @@
 const express = require('express')
 const app = express()
 const port = 3100
+var moment = require('moment');
 
 app.get('/', (req, res) => {
-  res.send('Hello Daniyal from the slack bot, Thank you for giving me life   !')
+  res.send(moment.version)
 })
 console.log(moment.version)
 app.listen(port, () => {
