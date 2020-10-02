@@ -4,7 +4,7 @@ pipeline {
         stage('---clean---') {
             steps {
                 checkout scm
-                echo env.BRANCH_NAME
+                echo env.GIT_BRANCH
             }
         }
         stage('--test--') {
