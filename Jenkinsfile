@@ -8,8 +8,6 @@ pipeline {
                  checkout scm
                script {
                     if(env.GIT_BRANCH == "origin/master") {
-                       d79a83a1-c3a8-4a99-96e1-cd84e5c9898e
-                       
                         echo 'I only execute on the master branch'
                     } else {
                         echo 'I execute elsewhere'
