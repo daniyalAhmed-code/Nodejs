@@ -20,20 +20,15 @@ pipeline {
         stage('Normal build') {
            steps {
               echo "Running in ${AGENT_LABEL}"
-              sh "hostname"
+           
            }
         } 
 
-        stage ("Docker build") {
-           agent{
-             dockerfile {
-                dir 'Dockerfiles'
-                label "${AGENT_LABEL}"
-             }
-            }
-            steps{
-                sh "hostname"
-            }
-        }
+         stage('Test build') {
+           steps {
+              echo "Running in ${AGENT_LABEL}"
+           
+           }
+        } 
     }
 }
