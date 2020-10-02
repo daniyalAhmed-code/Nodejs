@@ -13,7 +13,7 @@ node('master') {
 
 pipeline {
     agent {
-       label "${AGENT_LABEL}"
+       label AGENT_LABEL
     }
 
     stages {
