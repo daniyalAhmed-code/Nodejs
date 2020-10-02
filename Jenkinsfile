@@ -1,20 +1,18 @@
 pipeline {
     agent any
     stages {
-        stage('---clean---') {
+        stage('build') {
             steps {
                 checkout scm
-                echo env.GIT_BRANCH
-            }
-        }
-        stage('--test--') {
-            steps {
-                echo 'test'
-            }
-        }
-        stage('--package--') {
-            steps {
-                echo 'package'
+                if(env.GIT_BRANCH == "origin/master")
+                {
+                    echo "MASTER IS HERE"
+                }
+                else
+                {
+                    echo "DEVELOPER IS HERE"
+                }
+    
             }
         }
     }
