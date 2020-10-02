@@ -3,7 +3,8 @@ pipeline {
     stages {
         stage('---clean---') {
             steps {
-                echo 'clean'
+                checkout scm
+                echo env.BRANCH_NAME
             }
         }
         stage('--test--') {
