@@ -15,12 +15,6 @@ pipeline {
                 }
                 }
             }
-        stage('publish')
-        {
-            steps {
-
-            }
-        }    
+        
         }
     }
-}
