@@ -4,15 +4,24 @@ pipeline {
         stage('build') {
             steps {
                 checkout scm
-                if(env.GIT_BRANCH == "origin/master")
-                {
-                    echo "MASTER IS HERE"
+               script {
+                    if(env.GIT_BRANCH == "origin/master") {
+                        echo 'I only execute on the master branch'
+                    } else {
+                        echo 'I execute elsewhere'
+                    }
                 }
-                else
-                {
-                    echo "DEVELOPER IS HERE"
-                }
-    
+               
+            }
+        }
+        stage('--test--') {
+            steps {
+                echo 'test'
+            }
+        }
+        stage('--package--') {
+            steps {
+                echo 'package'
             }
         }
     }
